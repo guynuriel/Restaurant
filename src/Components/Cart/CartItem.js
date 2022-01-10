@@ -16,7 +16,6 @@ function CartItem(props) {
     ctx.addItemsToList(addItem);
   };
   const removeItemsFromList = () => {
-    console.log('0');
     ctx.removeItemsFromList(addItem);
   };
 

@@ -15,14 +15,11 @@ const cartReducer = (state, actions) => {
     let newItemsList = [...state.itemsList];
     const itemIndex = state.itemsList.findIndex((item) => item.id === actions.newItem.id);
     if (newItemsList[itemIndex]) {
-      console.log('old',newItemsList[itemIndex]);
       newItemsList[itemIndex].amount += actions.newItem.amount;
     } else {
       newItemsList = newItemsList.concat(actions.newItem);
-      console.log('new',newItemsList);
     }
 
-    console.log( 'before save', newItemsList);
 
     return {
       amountOfItems: state.amountOfItems,
@@ -59,7 +56,6 @@ const cartReducer = (state, actions) => {
     };
   }
   if (actions.type === "UPDATE_AMOUNT_AND_TOTAL_PRICE") {
-    console.log(state.itemsList);
     // count total price
     let totalPrice = 0;
     if (state.itemsList.length > 0) {
